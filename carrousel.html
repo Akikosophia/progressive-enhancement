@@ -1,43 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<title>Carrousel / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
+  <head>
+    <meta charset="utf-8" />
+    <title>Carrousel / Progressive Enhancement / FDND</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/styles.css" rel="stylesheet" />
+    <style>
+      /* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
-		</style>
-		<script type="module">
-			/* Schrijf hier eventueel je client-side JavaScript */
-		</script>
-	</head>
-	<body>
-		<h1>Carrousel</h1>
+      section {
+        display: flex;
+        width: 55em;
+        margin: auto;
+        border: solid black 2px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+      }
 
-		<!-- Content
+      article {
+        flex: 0 0 auto;
+        width: 55em; /* Adjust the width as needed */
+        scroll-snap-align: start;
+        background-color: #ccc; /* Default background color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-		“Websites leren bouwen, én praktijkervaring opdoen?”
+      blockquote {
+        font-weight: bolder;
+        font-style: italic;
+        font-size: 1.6em;
+        text-align: center;
+        white-space: normal; /* Allow text to wrap normally */
+        line-height: 1.4; /* Adjust line height for better readability */
+        max-width: 50%; /* Ensure the text takes full width */
+      }
 
-		“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
+      button {
+         padding: 0.3em 0.6em;
+        border: 1px solid transparent;
+        border-radius: 0.5rem;
+        font-family: inherit;
+        font-size: inherit;
+        color: var(--green);
+        background: var(--blue);
+        width: 7em;
+        text-align: center;
+		display: inline-block;
+		position: absolute;
+        top: 50%;
+		left: 0;
+		margin-left: 1.5em;
+      }
 
-		“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
+	  .next {
+		left: 600px;
+		
+	  }
+      
+	  .prev {
+		right: 2px;
+	  }
+	
+      
 
-		“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”
+      /* Additional styles to control word wrapping */
+      /* .word-wrap { */
+      /* display: inline-block; /* Ensure each word is a block element */
+      /* margin-right: 0.5em; Adjust margin between words 
+        } */
 
-		“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”
+      /* .line-break::after {
+            content: "\A"; Add a line break after each line 
+            white-space: pre; Preserve the line break
+            display: block; Ensure each line is a block element 
+            height: 0; Hide the line break 
+        } */
 
-		“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”
+      article:nth-of-type(1) {
+        background-color: var(--purple);
+      }
 
-		-->
+      article:nth-of-type(2) {
+        background-color: var(--yellow);
+      }
 
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted autoplay loop>
-				<a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
-			</video>
-		</details>
-	</body>
+      article:nth-of-type(3) {
+        background-color: var(--green);
+      }
+
+      article:nth-of-type(4) {
+        background-color: var(--purple);
+      }
+
+      article:nth-of-type(5) {
+        background-color: var(--yellow);
+      }
+
+      article:nth-of-type(6) {
+        background-color: var(--green);
+      }
+
+      /* Hint: welk layout model is handig om content naast elkaar te zetten? */
+    </style>
+    <script type="module">
+      /* Schrijf hier eventueel je client-side JavaScript */
+      // JavaScript for adding line breaks after every 4 words
+      // 	const blockquotes = document.querySelectorAll('blockquote');
+      // blockquotes.forEach(blockquote => {
+      //     let text = blockquote.textContent.trim();
+      //     let words = text.split(' ');
+      //     let newContent = '';
+      //     for (let i = 0; i < words.length; i++) {
+      //         newContent += `<span class="word-wrap">${words[i]}</span>`;
+      //         if ((i + 1) % 4 === 0 && i !== words.length - 1) {
+      //             newContent += '<span class="line-break"></span>';
+      //         }
+      //     }
+      //     blockquote.innerHTML = newContent;
+      // });
+    </script>
+  </head>
+  <body>
+    <h1>Carrousel</h1>
+
+    <section>
+      <article>
+      
+		<!-- <div class="button">
+          <a href="#" class="prev">Vorige</a>
+          <a href="#" class="next">Volgende</a>
+		</div> -->
+
+		<button class="prev">vorige</button>
+		<button class="next">volgende</button>
+
+        <blockquote>
+          “Websites leren bouwen, én praktijkervaring opdoen?”
+        </blockquote>
+      </article>
+      <article>
+        <blockquote>
+          “FDND is de enige HBO-opleiding voor Frontend Development in
+          Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
+        </blockquote>
+      </article>
+      <article>
+        <blockquote>
+          “Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
+        </blockquote>
+      </article>
+      <article>
+        <blockquote>
+          “In het studiomodel werken studenten onder begeleiding van coaches en
+          experts uit het vakgebied aan praktijkgerichte opdrachten”
+        </blockquote>
+      </article>
+      <article>
+        <blockquote>
+          “Bij FDND leer je websites bouwen en andere belangrijke skills die jij
+          in de praktijk toe kan passen”
+        </blockquote>
+      </article>
+      <article>
+        <blockquote>
+          “Een Associate degree-opleiding is een tweejarige hbo-opleiding op
+          niveau 5”
+        </blockquote>
+      </article>
+    </section>
+
+    <details open>
+      <summary>Demo video</summary>
+      <video
+        src="assets/carrousel.mp4"
+        width="1298"
+        height="469"
+        controls
+        muted
+        autoplay
+        loop
+      >
+        <a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
+      </video>
+    </details>
+  </body>
 </html>

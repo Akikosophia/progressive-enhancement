@@ -24,9 +24,9 @@
 
       article {
         flex: 0 0 auto;
-        width: 55em; /* Adjust the width as needed */
+        width: 55em; 
         scroll-snap-align: start;
-        background-color: #ccc; /* Default background color */
+        background-color: #ccc; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -37,9 +37,9 @@
         font-style: italic;
         font-size: 1.6em;
         text-align: center;
-        white-space: normal; /* Allow text to wrap normally */
-        line-height: 1.4; /* Adjust line height for better readability */
-        max-width: 50%; /* Ensure the text takes full width */
+        white-space: normal; 
+        line-height: 1.4;
+        max-width: 50%; 
       }
 
       button {
@@ -68,20 +68,6 @@
 		right: 2px;
 	  }
 	
-      
-
-      /* Additional styles to control word wrapping */
-      /* .word-wrap { */
-      /* display: inline-block; /* Ensure each word is a block element */
-      /* margin-right: 0.5em; Adjust margin between words 
-        } */
-
-      /* .line-break::after {
-            content: "\A"; Add a line break after each line 
-            white-space: pre; Preserve the line break
-            display: block; Ensure each line is a block element 
-            height: 0; Hide the line break 
-        } */
 
       article:nth-of-type(1) {
         background-color: var(--purple);
@@ -110,21 +96,7 @@
       /* Hint: welk layout model is handig om content naast elkaar te zetten? */
     </style>
     <script type="module">
-      /* Schrijf hier eventueel je client-side JavaScript */
-      // JavaScript for adding line breaks after every 4 words
-      // 	const blockquotes = document.querySelectorAll('blockquote');
-      // blockquotes.forEach(blockquote => {
-      //     let text = blockquote.textContent.trim();
-      //     let words = text.split(' ');
-      //     let newContent = '';
-      //     for (let i = 0; i < words.length; i++) {
-      //         newContent += `<span class="word-wrap">${words[i]}</span>`;
-      //         if ((i + 1) % 4 === 0 && i !== words.length - 1) {
-      //             newContent += '<span class="line-break"></span>';
-      //         }
-      //     }
-      //     blockquote.innerHTML = newContent;
-      // });
+     
     </script>
   </head>
   <body>
@@ -132,11 +104,6 @@
 
     <section>
       <article>
-      
-		<!-- <div class="button">
-          <a href="#" class="prev">Vorige</a>
-          <a href="#" class="next">Volgende</a>
-		</div> -->
 
 		<button class="prev">vorige</button>
 		<button class="next">volgende</button>
